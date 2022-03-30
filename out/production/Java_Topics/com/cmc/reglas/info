@@ -1,0 +1,21 @@
+Los metodos de las clases abstractas se implementan en las clases hijas
+ver Res y Comible
+
+
+Interface
+    - Todos los metodos deben ser abstractos
+    - Los metodos no necesitan el modificador abstract
+    - No hace falta poner el modificador abstract a la interface
+
+
+Abstractas
+    - Puede tener metodos abstractos e implementados
+    - Si el metodo no tiene implementacion se debe poner el modificador abstract
+    - Si hay un metodo abstracto en la clase, se debe poner el modificado abstracto en la clase
+
+
+Heredar los metodos de Interface, o no
+     Al implementar la interfaz se debe implementar los metodos de la interfaz
+     o
+     NO quedarse con la herencia de metodos y colocar a la clase en abstract
+     ver Dinero.java

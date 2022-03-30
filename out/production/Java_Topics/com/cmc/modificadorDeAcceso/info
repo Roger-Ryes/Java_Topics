@@ -1,0 +1,18 @@
+Public
+    - Se puede acceder a los datos desde cualquier clase y de cualquier paquete
+
+Private
+    - Solo desde la misma clase
+
+Default
+    - Puede acceder a los datos desde la misma clase y miembros de clases del mismo paquete
+
+Protected
+    - Similar a Default y tambien se puede acceder desde las clases heredadas
+
+
+    Gerarquia de re-estrictivo
+    - PUBLIC        public String x;            menos rees.
+    - PROTECTED     protected String x;
+    - DEFAULT       String x;
+    - PRIVATE       private String x;           mas rees.
