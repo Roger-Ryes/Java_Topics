@@ -1,0 +1,14 @@
+22:48:08.734 [main] WARN  com.cmc.log.Admin - Mensaje de warn
+22:48:30.622 [main] WARN  com.cmc.log.Admin - Mensaje de warn
+22:55:56.436 [main] WARN  com.cmc.log.Admin - Mensaje de warn
+22:55:56.442 [main] INFO  com.cmc.log.Admin - Mensaje de info
+22:55:56.442 [main] DEBUG com.cmc.log.Admin - Mensaje debug
+22:55:56.443 [main] TRACE com.cmc.log.Admin - Mensaje de trace
+22:56:18.444 [main] WARN  com.cmc.log.Admin - Mensaje de warn
+22:56:18.452 [main] INFO  com.cmc.log.Admin - Mensaje de info
+22:56:18.453 [main] DEBUG com.cmc.log.Admin - Mensaje debug
+22:56:18.453 [main] TRACE com.cmc.log.Admin - Mensaje de trace
+22:59:17.962 [main] WARN  com.cmc.log.Admin - Mensaje de warn
+22:59:17.968 [main] INFO  com.cmc.log.Admin - Mensaje de info
+22:59:17.969 [main] DEBUG com.cmc.log.Admin - Mensaje debug
+22:59:17.969 [main] TRACE com.cmc.log.Admin - Mensaje de trace
