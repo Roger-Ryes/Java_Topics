@@ -1,0 +1,10 @@
+Una clase Abstracta
+
+Solo representa la firma de un metodo
+
+Si la clase tiene un metodo "abstract", entonces toda la clase debe ser "abstract"
+
+Ver clase A_Figura.java
+
+
+Si es una clase abstracta entonces, no se puede instanciar la clase

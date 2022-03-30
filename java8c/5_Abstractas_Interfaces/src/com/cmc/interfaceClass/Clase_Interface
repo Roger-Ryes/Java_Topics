@@ -1,0 +1,8 @@
+INTERFACE
+
+Solo se definen metodos abstractos (Contienen solo la firma y no el cuerpo)
+
+Es opcional colocar o no la palabra "abstract" en un metodo
+
+La ventaja de usar interfaces en vez de las herencias, es que en java puedo llamar varias interfaces, una clase solo
+se puede llamar una clase
