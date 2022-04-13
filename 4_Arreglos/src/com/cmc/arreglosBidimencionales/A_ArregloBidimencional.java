@@ -19,7 +19,7 @@ public class A_ArregloBidimencional {
 
 
 //        Imposibles Instancias del objeto
-//        arregloInt3 = new int[][];
+//        arregloInt3 = new int[][];  // En posicion 1, si indicar tamaño
 //        arregloInt3 = new int[][3];
 
 //        Instancias de arreglo

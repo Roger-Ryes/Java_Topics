@@ -19,4 +19,8 @@ public class A_Persona {
         this("Prueba", 8); //INVOCO AL OTRO CONSTRUCTOR DE LA MISMA CLASE
         this.nombre = nombre;
     }
+
+    public String showData(){
+        return this.nombre+" "+this.edad;
+    }
 }

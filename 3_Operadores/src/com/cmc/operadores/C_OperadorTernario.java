@@ -14,8 +14,8 @@ public class C_OperadorTernario {
 
         System.out.println("\nEjercicio 3");
         int edad2= 18;
-        String tipo2 = (edad2>50)?"Adulto MAyor":
-                (edad2>18 && edad2<=50)?"Adulto":"Menor de edad";
+        String tipo2 =  (edad2>50)?"Adulto MAyor":
+                        (edad2>18 && edad2<=50)?"Adulto":"Menor de edad";
         System.out.println("\t"+tipo2);
     }
 }

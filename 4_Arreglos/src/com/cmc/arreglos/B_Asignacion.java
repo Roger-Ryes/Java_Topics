@@ -6,7 +6,6 @@ public class B_Asignacion {
         String arrStr2 [] = {"a","b","c"};
 
         arrStr1 = arrStr2;
-
         System.out.println(arrStr2[1]);
         System.out.println(arrStr1[1]);
 

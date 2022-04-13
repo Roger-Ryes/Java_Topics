@@ -11,6 +11,6 @@ public class Bottle {
 		Bottle b1 = new Bottle(2);
 		b1.liquid=10;
 		System.out.println(b1.liquid);
-		
+
 	}
 }

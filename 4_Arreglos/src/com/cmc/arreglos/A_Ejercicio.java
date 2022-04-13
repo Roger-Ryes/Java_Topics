@@ -7,14 +7,14 @@ public class A_Ejercicio {
 
 //      Valores por defecto
         System.out.println("\nSin asignar valores");
-        System.out.println("Valor arregloInt1[0]:"+arregloInt1[0]);
-        System.out.println("Valor arregloStr1[0]:"+arregloStr1[0]);
+        System.out.println("Valor arregloInt1[0]: "+arregloInt1[0]);
+        System.out.println("Valor arregloStr1[0]: "+arregloStr1[0]);
 
 //      Asignacion de elementos
         arregloInt1[0]=2;
         arregloStr1[0]="Hello";
         System.out.println("\nAsignando valores");
-        System.out.println("Valor arregloInt1[0]:"+arregloInt1[0]);
-        System.out.println("Valor arregloStr1[0]:"+arregloStr1[0]);
+        System.out.println("Valor arregloInt1[0]: "+arregloInt1[0]);
+        System.out.println("Valor arregloStr1[0]: "+arregloStr1[0]);
     }
 }
