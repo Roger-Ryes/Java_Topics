@@ -95,10 +95,13 @@ ver Dinero.java
 
 
 ### Gerarquia de re-estrictivo
-- PUBLIC        public String x;            menos rees.
-- PROTECTED     protected String x;
-- DEFAULT       String x;
-- PRIVATE       private String x;           mas rees.
+| PUBLIC        |public String x;   |menos rees.|
+| :---:   	| :-: 		    | :-: 	|
+| PROTECTED     |protected String x;|		|
+| :---:   	| :-: 		    | :-: 	|
+| DEFAULT       |String x;	    |		|
+| :---:   	| :-: 		    | :-: 	|
+| PRIVATE       |private String x;  |mas rees.  |
 
 ver en: 5_Abstractas_Interfaces | com.cmc.modificadorDeAcceso
 
@@ -116,28 +119,32 @@ Se puede sobreescribir un modificador de acceso, pero solo se puede hacerlo meno
 | :---:   	| :-: 		    | :-: 	|
 | PRIVATE       |private String x;  |mas rees.  |
 
-	Ejemplo 1                               Ejemplo 2
-
-	class Padre{                            class Padre{
-		public void m1(){}                      void m1(){}     // Defaul
-	}                                       }
-	---Correct---                           ---Correct---
-	class Hijo extends Padre{               class Hijo extends Padre{
-		public void m1(){}                       public void m1(){}
-	}                                       }
-	---Incorrect---                         ---Correct---
-	class Hijo extends Padre{               class Hijo extends Padre{
-		protecter void m1(){}                   protecter void m1(){}
-	}                                       }
-	---Incorrect---                         ---Correct---
-	class Hijo extends Padre{               class Hijo extends Padre{
-		private void m1(){}                     void m1(){}
-	}                                       }
-											---Incorrect---
-											class Hijo extends Padre{
-												private void m1(){}
-											}
-
+	|Ejemplo 1                      |         Ejemplo 2                     |
+	| :---:   			| :-: 		    			|
+	|class Padre{                   |         class Padre{			|
+	|    public void m1(){}         |             void m1(){}     // Defaul |
+	|}                              |         }				|
+	| :---:   			| :-: 		    			|
+	|---Correct---                  |         ---Correct---			|
+	|class Hijo extends Padre{      |         class Hijo extends Padre{	|
+	|	public void m1(){}      |                 public void m1(){}	|
+	|}                              |         }				|
+	| :---:   			| :-: 		    			|
+	|---Incorrect---                |         ---Correct---			|
+	|class Hijo extends Padre{      |         class Hijo extends Padre{	|
+	|	protecter void m1(){}   |                protecter void m1(){}	|
+	|}                              |         }				|
+	| :---:   			| :-: 		    			|
+	|---Incorrect---                |         ---Correct---			|
+	|class Hijo extends Padre{      |         class Hijo extends Padre{	|
+	|	private void m1(){}     |                void m1(){}		|
+	|}                              |         }				|
+	| :---:   			| :-: 		    			|
+	|				|	---Incorrect---			|
+	|				|	class Hijo extends Padre{	|
+	|				|		private void m1(){}	|
+	|				|	}				|
+|
 ### Interfaces
 	class Test{
 		void m1(){} // Default
