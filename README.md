@@ -307,3 +307,44 @@ Primero van los hijos, luego los padres
 		System.out.println("Execute catch");
 		ex.printStackTrace();
 	}
+
+
+# Tipos de datos
+## Primitivos
+	byte by = 0;     // 8 ocupa bites
+    short sh = 0;    //16
+    int in = 0;      //32
+    long lo = 0;     //64
+
+	float f = 0;    //32
+    double d = 0;   //64
+
+    char c='a';     //16
+
+    boolean boo = true; // 1
+
+
+En un contenedor (byte) no se puede colocar algo mas grande (int)
+	byte by = 0;     // 8 ocupa bites
+	int in = 0;      //32
+
+    by=in;
+
+Un "entero" puedo guardar en un "flotante"
+        f = lo;
+
+A un "char" se le puedo mandar codigo ASCII
+        c=123;
+        
+Un char se puede guardar en un entero
+        in = c;
+
+Flotantes
+        f=10;
+        f=10.10; // Es un Double, un double es mayor a un float
+        d=10.10;
+
+Existen algunos sufijos para indicar explicitamente el tipo de dato
+        f=10.10f; 		// f/F, float
+        d= 100.110D;	// d/D, double
+        lo=10L;			// l/L,	long
