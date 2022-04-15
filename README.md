@@ -251,3 +251,26 @@ Solo muestra el erro una vez se corra el proyecto
 			throw new RuntimeException(); // Unchecked
 		}
 	}
+
+## Tratar Exceptiones
+- Envolverlo en un try/catch
+	A_Lanzar thr = new A_Lanzar();
+	try{
+		thr.throwExceptionOne(20);
+	}catch (Exception e){
+		e.printStackTrace();
+	}
+- Propagar la exception (throws Exception)
+	public void tryExceptionTwo() throws Exception {
+		// spread this exception, First method
+		A_Lanzar thr = new A_Lanzar();
+		thr.throwExceptionOne(20);
+	}
+
+SI una clase se hereda de una exception, entonces esa clase es una excepcion
+Ver (B_heredarException y A_TratarException)
+			RunTimeException
+			/
+	Exception -- IOException
+			\ 
+			WhateverException
