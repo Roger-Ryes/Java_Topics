@@ -269,8 +269,41 @@ Solo muestra el erro una vez se corra el proyecto
 
 SI una clase se hereda de una exception, entonces esa clase es una excepcion
 Ver (B_heredarException y A_TratarException)
-			RunTimeException
-			/
-	Exception -- IOException
-			\ 
-			WhateverException
+
+Exception
+|- RunTimeException
+|- IOException
+|- WhateverException
+
+# Flujo Exception
+El orden de la exceptiones influye dependiendo de la jerarquia.
+Primero van los hijos, luego los padres
+	// Correcto
+	try {
+		System.out.println("Start");
+		value.toLowerCase();
+		num[1] = "2";
+		System.out.println("End");
+	} catch (NullPointerException ex) {
+		System.out.println("Execute catch");
+		ex.printStackTrace();
+	} catch (Exception ex){
+		System.out.println("Execute catch General");
+		ex.printStackTrace();
+	} finally {
+		// Siempre entra al "finally", con o sin exception
+		System.out.println("Entro al finally");
+	}
+	// Incorrecto
+	try {
+		System.out.println("Start");
+		value.toLowerCase();
+		num[1] = "2";
+		System.out.println("End");
+	} catch (Exception ex){
+		System.out.println("Execute catch General");
+		ex.printStackTrace();
+	} catch (NullPointerException ex) {
+		System.out.println("Execute catch");
+		ex.printStackTrace();
+	}
