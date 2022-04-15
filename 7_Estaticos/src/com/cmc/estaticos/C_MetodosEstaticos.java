@@ -10,7 +10,7 @@ public class C_MetodosEstaticos {
     }
 
     public static void main(String[] args) {
-        metodoSimple(); //Error Compilation, No puedo acceder al metodo si no es estatico
+//        metodoSimple(); //Error Compilation, No puedo acceder al metodo si no es estatico
 
         metodoEstatico();
     }
