@@ -348,3 +348,31 @@ Existen algunos sufijos para indicar explicitamente el tipo de dato
         f=10.10f; 		// f/F, float
         d= 100.110D;	// d/D, double
         lo=10L;			// l/L,	long
+
+## Casting
+Ya que en un contenedor (byte) no se puede colocar algo mas grande (int), se castea
+		by = (byte)in;
+		fl = (float)100.1;
+
+## Operadores
+	   "Suma"
+        num1 + num2 + num3
+
+        // Cuando se junta un string, se concatena
+        "Concatenacion: "+num1 + num2 + num3
+        
+		// Para que sume y concatene
+        "ConcatenacionYSuma: "+(num1 + num2 + num3)
+
+## Valor Por Defecto
+		byte by;     // 0
+        short sh;    // 0
+        int in;      // 0
+        long lo;     // 0
+
+        float fl;    // 0.0
+        double db;   // 0.0
+
+        char ch;     // u0000 "Espacio en blanco"
+
+        boolean bl; // false

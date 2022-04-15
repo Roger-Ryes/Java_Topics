@@ -31,7 +31,7 @@ public class tiposDeDatos {
 
         //
         f=10;
-        f=10.10; // Es un Double, un double es mayor a un float
+//        f=10.10; // Es un Double, un double es mayor a un float
         d=10.10;
         // Existen algunos sufijos para indicar explicitamente el tipo de dato
         f=10.10f;
