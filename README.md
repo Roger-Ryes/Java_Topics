@@ -226,13 +226,28 @@ Al importar un statico no solo se llama a la clase, sino tambien al metodo
 		int x = parseInt("10");
 	}
 
+
 # Exceptions
-## Checked
+## Tipos Exceptions
+### Checked
 Son las que molestan en compilacion en cada punto
 |Ejm: 	IOException		 |
 |	 	WhateverException|	
 
-## Unchecked o RunTimeException
+### Unchecked o RunTimeException
 Solo muestra el erro una vez se corra el proyecto
 |Ejm:	ArrayIndexOutOfBoundsException|
 |		NullPointerException		  |
+
+## Lanzar Exceptiones
+	public void throwExceptionOne(int x) throws Exception{
+		if (x<0){
+			throw new Exception(); // Checked
+		}
+	}
+
+	public void throwExceptionTwo(int y) {
+		if (y<0){
+			throw new RuntimeException(); // Unchecked
+		}
+	}
