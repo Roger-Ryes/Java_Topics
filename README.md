@@ -376,3 +376,89 @@ Ya que en un contenedor (byte) no se puede colocar algo mas grande (int), se cas
         char ch;     // u0000 "Espacio en blanco"
 
         boolean bl; // false
+
+## Wrappers
+Son clases que envuelven un valor primitivo.
+Al ser clases, el valor por defecto de un atributo wrapper es NULL 
+Es declaran con mayusculas, y no hay para "char"
+		Byte by;     // 0
+        Short sh;    // 0
+        Int in;      // 0
+        Long lo;     // 0
+
+        Float fl;    // 0.0
+        Double db;   // 0.0
+
+        Boolean bl; // false
+En operaciones de wrappers, se debe usar equals y no ==
+		Integer i1 = 1200;
+        Integer i2 = 1200;
+        // No apuntan al mismo objeto
+        if(i1==i2){
+            System.out.println("Iguales");
+        }else{
+            System.out.println("Diferentes");
+        }
+
+        // Usar equals a usar wrappers
+        if(i1.equals(i2)){
+            System.out.println("Iguales");
+        }else{
+            System.out.println("Diferentes");
+        }
+
+
+## Unboxing
+Implicitamente llama al metodo
+		Integer i1= 100; // Internamente i1 = new Integer(100)
+
+        // unboxing Permite que se comporte como un primitivo
+        int i2 = i1; // Unboxing | internamente i2 = i1.intValue();
+
+## Constructores
+Dependiendo del tipo van a aceptar su tipo o valores de string
+		Short sh = new Short((short)0);
+        Short sh1 = new Short("10");
+
+        Long lg = new Long("20");
+
+        Float ft = new Float(10.10D);
+
+        Boolean bl0 = new Boolean(false);
+        Boolean bl1 = new Boolean("true");
+        Boolean bl2 = new Boolean("True");
+        Boolean bl3 = new Boolean("Python");
+
+## Sobrecarga
+Busca el metodo exacto, del atributo de dato exacto	
+Si no encuentra el dato del atributo, se va al primitivo mas grande (de "int" va a "long")
+Si no encuentra hace BOXING y busca su WRAPPER correspondiente ("double" va a "Integer")
+Si no encuentra el wrapper especifico busca una clase padre del Wrapper (Numbre, Object)
+ver (A_SobreCargaData)
+
+	public void m1(int x){
+        System.out.println("int");
+    }
+    public void m1(Integer x){
+        System.out.println("Integer");
+    }
+    public void m1(long x){
+        System.out.println("long");
+    }
+	public void m1(Object x){
+        System.out.println("Object");
+    }
+
+    public void m1(Number x){
+        System.out.println("Number");
+    }
+
+	public static void main(String[] args) {
+        int x = 100;
+        long y = 100;
+        double z = 100;
+        A_SobreCargaData a_sobre = new A_SobreCargaData();
+        a_sobre.m1(x);
+        a_sobre.m1(y);
+        a_sobre.m1(z);
+    }
