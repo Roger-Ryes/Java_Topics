@@ -188,3 +188,17 @@ En un metodo estatico el "this", no funciona
 	void static test(){
 		this.a = 20; // No vale, genera error de compilacion
 	}
+### Regla metodos estaticos
+	public static void metodoEstatico(){
+		System.out.println("");
+	}
+
+	public void metodoSimple(){
+		System.out.println("");
+	}
+
+	public static void main(String[] args) {
+		metodoSimple(); //Error Compilation, No puedo acceder al metodo si no es estatico
+
+		metodoEstatico();
+	}
