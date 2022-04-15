@@ -153,3 +153,38 @@ Se puede sobreescribir un modificador de acceso, pero solo se puede hacerlo meno
 	}
 	// OJO: Si no coloco nada en una clase es un "Default", pero en una interface es un "Public"
 	// EN interfaces no se puede colocar private o protected
+
+# Estaticos
+## Atributos Estaticos
+Pertenecen a la CLASE, no se crean en cada objeto 
+Como los estaticos pertenecen a la clase, se acceden asi
+	NombreClase.atributoEstatico
+	Count.valorStatic = 10
+
+## Metodos Estaticos
+En compilacion, se analizan los metodos estaticos
+Un metodo estatico no puede acceder sin "apuntador" a un atributo del objeto
+
+	// Incorrect
+	public static void main(String[] args) { valor = 5 }
+	// Correct
+	public static void main(String[] args) { 
+		Test t1 = new Test();
+		t1.valor = 5;
+	}
+	//
+	int valor;
+    static int valueSta;
+    public static void main(String[] args) {
+		valor = 100; // Sin apuntador en metodo estatico
+
+        A_AtributosEstaticos ae = new A_AtributosEstaticos();
+        ae.valor = 100; // Con apuntador en metodo estatico
+
+        valueSta = 10; // Al ser estatico puedo acceder en metodo estatico
+    }
+En un metodo estatico el "this", no funciona
+	int a;
+	void static test(){
+		this.a = 20; // No vale, genera error de compilacion
+	}
