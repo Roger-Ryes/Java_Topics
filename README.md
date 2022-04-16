@@ -270,10 +270,10 @@ Propagar la exception (throws Exception)
 SI una clase se hereda de una exception, entonces esa clase es una excepcion
 Ver (B_heredarException y A_TratarException)
 
-Exception
-|- RunTimeException
-|- IOException
-|- WhateverException
+	Exception
+	|- RunTimeException
+	|- IOException
+	|- WhateverException
 
 # Flujo Exception
 El orden de la exceptiones influye dependiendo de la jerarquia.
