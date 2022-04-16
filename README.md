@@ -868,6 +868,7 @@ Para importar todo de un packete
 3. No tiene retorno, void
 4. Recibe un arreglo de String
 
+	
 	// Se puede cambiar
 	public static void main(String[] args) {}
 	public static void main(String sgra []) {}
