@@ -770,3 +770,41 @@ Ejemplo practico ver B_PredicadoRemover
 	productos.removeIf((p)->{
 		return p.getStock()<30;
 	});
+
+# ArrayList
+En array list acepta null
+
+	List<String> value = new ArrayList<>();
+	value.add("two");
+	value.add(null);
+
+Al usar "indexOf" regresa un entero
+
+	int posic = value.indexOf("two");  	// 0
+	posic = value.indexOf("four");		// -1
+
+Usar "removed" acepta index, objectos y retornando un String, boolean respectivamente
+
+	String removed = value.remove(0);
+	boolean isRemoved = value.remove(null);
+
+	// Con clases
+	B_Persona p = new B_Persona("Mac");
+	personas.add(new B_Persona("Will"));
+	personas.add(p);
+	
+	personas.remove(new B_Persona("Will")); 	// No lo va a encontrar porque esta apuntando a otro objeto
+	personas.remove(p); 						// Si lo va a encontrar porque esta apuntando al objeto
+
+
+En mi list array acepta a clases y clases heredadas de la misma (ver B_Test1)
+ 	
+	personas.add(new FatherClass());
+    personas.add(new ChildrenClass());
+
+La interfaz al ser implementada en un Clase, se puede agregar a la lista (ver B_Test1)
+	
+	List<NameInterfaz> lists = new ArrayList<>();
+	lists.add(new FatherClass());
+	lists.add(new ChildrenClass());
+
