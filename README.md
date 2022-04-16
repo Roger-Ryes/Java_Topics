@@ -251,14 +251,15 @@ Solo muestra el erro una vez se corra el proyecto
 	}
 
 ## Tratar Exceptiones
-- Envolverlo en un try/catch
+Envolverlo en un try/catch
+
 	A_Lanzar thr = new A_Lanzar();
 	try{
 		thr.throwExceptionOne(20);
 	}catch (Exception e){
 		e.printStackTrace();
 	}
-- Propagar la exception (throws Exception)
+Propagar la exception (throws Exception)
 
 	public void tryExceptionTwo() throws Exception {
 		// spread this exception, First method
