@@ -837,3 +837,13 @@ El objecto que va a Garbage Collection es "new Persona("Bruno")"
 	float f2 = 0_0_487.0f;
 
 	double d1 = 1_0_487.0d;
+
+# Switch / case
+
+	switch(opcion){
+		case 1: nameDay="MONDAY"; break;
+		case 2: nameDay="TURSDAY"; break;
+		default: nameDay = "None"; break;
+		case 3: nameDay="WEDNESDAY"; break;
+		case 4: nameDay="MONDAY"; break;
+	}
