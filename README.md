@@ -488,10 +488,64 @@ Tienen los mismos metodos.
 StringBuffer es ThreadSafe, es decir tiene metodos Synchronized, lo que permite que en un esquema multihilos,
 si exista un metodo de un objeto accedido por multiples hilos a la vez, solo uno puede entrar y el otro
 espera hasta que el primero termine
-| Metodos equivalentes												|
-| :---:   							| :-: 		    				|
+### Metodos equivalentes
 | String        					| StringBuffer/StringBuilder	|
-| :---:   							| :-: 		    				|
+| :---:   							| :---:		    				|
 | str.concat("va")					| sb.append("va");				|
-| :---:   							| :-: 		    				|
+| :---:   							| :---: 	    				|
 |str.replace("origin", "toReplace")	|sb.replace(init,end, "text"); //init: NoIncluida, end: Incluido|
+
+### Metodos NO equivalentes
+		// Origin: Hola mundo programer
+		// Delete
+			sb1.delete(5, 10); 			// Hola  programer
+        
+		// Insert
+    	    sb1.insert(6, "COLADO");	// Hola  COLADOprogramer
+        
+		// Reverse
+        	sb1.reverse();				// remargorpODALOC  aloH
+
+### Metodos Comunes
+Se usan igual tanto para String, StringBuffer y StringBuilder
+		// Origin: Hola mundo java metodos comunes
+		// CharAt
+        	sb1.charAt(9)			// o
+
+        // IndexOF
+        	sb1.indexOf("do")		// 8
+        	sb1.indexOf("do", 12) 	// 20
+        
+		// length
+        	sb1.length()			// 32
+
+		// SubString
+			String ret = sb1.substring(2, 10);	// la mundo
+En StringBuffer y StringBuilder al usar "substring", se debe guardar en otra variable
+
+### Equals en String, StringBuffer/StringBuilder
+String: Sobreescribe "equals" para comparar el contenido de la cadena
+StringBuffer/StringBuilder: NO SOBREESCRIBE equals
+ver E_MetodoEquals
+
+### Metodos Solo en String
+		// Origin: " Hola Mundo ";
+		// Trim
+			cadena.trim();			// "Hola Mundo"
+		// isEmpty
+			cadena.isEmpty());		// false
+
+		// equals
+			"Hola Mundo".equals("hOla mUndo") 				// false
+		// equalsIgnoreCase
+			"Hola Mundo".equalsIgnoreCase("hOla mUndo")		// true, ignora el case
+
+### Resumen Metodos
+| String        	| Similar		|StringBuffer/StringBuilder	|
+| :---:   			| :---:		   	|:---:						|
+|trim				|length			|delete						|
+|toUpperCase		|charAt			|insert						|
+|toLowerCase		|indexOf		|							|
+|isEmpty			|"substring"	|reverse					|
+|replace			|equals			|replace					|
+|equalsIgnoreCase	|				|							|
