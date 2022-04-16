@@ -792,7 +792,7 @@ Usar "removed" acepta index, objectos y retornando un String, boolean respectiva
 	B_Persona p = new B_Persona("Mac");
 	personas.add(new B_Persona("Will"));
 	personas.add(p);
-	
+
 	personas.remove(new B_Persona("Will")); 	// No lo va a encontrar porque esta apuntando a otro objeto
 	personas.remove(p); 						// Si lo va a encontrar porque esta apuntando al objeto
 
@@ -808,3 +808,32 @@ La interfaz al ser implementada en un Clase, se puede agregar a la lista (ver B_
 	lists.add(new FatherClass());
 	lists.add(new ChildrenClass());
 
+
+# Garbage Collection
+Los objetos que no son utilizados, se los lleva Garbage Collection, evitando que ocupe memoria
+El garbave collection se ejecuta en la ejecucion
+Ejemplo
+1. Persona p = new Persona("Rosita");
+2. Persona p1 = new Persona("Bruno");
+3. p1 = p
+4. p = null 
+
+El objecto que va a Garbage Collection es "new Persona("Bruno")"
+
+
+# Literals
+
+	// Decimal
+	int i1 = 100;
+
+	// Octal
+	int i2 = 04322;
+
+	// Hexadecimal
+	int i3 = 0xCaFe2;
+
+	// Uso de guion bajo para separar numeros
+	float f1 = 100_233_487.0f; 
+	float f2 = 0_0_487.0f;
+
+	double d1 = 1_0_487.0d;
