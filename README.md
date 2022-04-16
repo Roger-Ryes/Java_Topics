@@ -861,3 +861,18 @@ Para importar todo de un packete
 
 	import package1.*;
 	import package1.com.*;
+
+# Sintaxis main
+1. Public
+2. statico
+3. No tiene retorno, void
+4. Recibe un arreglo de String
+
+	// Se puede cambiar
+	public static void main(String[] args) {}
+	public static void main(String sgra []) {}
+
+	// No se puede cambiar
+	private static void main(String[] args) {}
+	private void main(String[] args) {}
+	public static int main(String[] args) {}
