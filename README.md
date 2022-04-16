@@ -564,3 +564,141 @@ se linux, Windows o Mac (Multiplataforma)|
 	java ClassName Parametro1 Parametro2 Parametro...
 	Ejm:
 	java Test true abc "Hola mundo"
+
+# LocalDate y LocalDateTime
+## Instanciar
+### Local Date 
+No tiene constructor accesible
+		// First instance
+        	LocalDate ld = LocalDate.now();
+        
+        // Second instance
+        	ld = LocalDate.of(2020,8,20);
+        
+        // Third instance
+        	ld = LocalDate.of(2020, Month.FEBRUARY, 18);
+
+		// Time Exception
+        	ld = LocalDate.of(2020, Month.FEBRUARY, 33);
+        	// Se ejecuta cada vez que sale del rango
+
+### Local Date Time
+No tiene un constructor
+        // First intance
+        LocalDateTime ldt1 = LocalDateTime.now(); // yyyy-MM-ddThh:mm:ss.ms
+        
+        // Second instance
+        LocalDateTime ldt2 = LocalDateTime.of(2020,3,15,3,50); // yyyy-MM-ddThh:mm
+        
+        // Third instance
+        LocalDateTime ldt3 = LocalDateTime.of(2021, Month.AUGUST,26,8,00, 50, 4); // yyyy-MM-ddThh:mm:ss.ms
+
+## Operaciones con fechas
+El LocalDate es inmutable, al igual que String, la fecha original no cambia, devuelve una nueva fecha
+        //LocalDate
+		LocalDate ld1 = LocalDate.now();
+        	//Days
+        		LocalDate ld2 = ld1.plusDays(20); // No modifica el locaDate origina, devuelve una nueva locaDate
+
+        	//Month
+        		LocalDate ld3 = ld1.plusMonths(12);
+
+        	//Year
+        		LocalDate ld4 = ld1.plusYears(20);
+
+        //LocalDateTime
+        LocalDateTime ldt1 = LocalDateTime.now();
+        	//Months
+        		LocalDateTime ldt2 = ldt1.plusMonths(5);
+
+        	//Hours
+        		LocalDateTime ldt3 = ldt1.plusHours(9);
+
+        	//Minutess
+        		LocalDateTime ldt4 = ldt1.plusMinutes(120);
+
+## Obtener informacion
+		LocalDate ld1 = LocalDate.now();	// 2022-04-15
+        	// Year
+				ld1.getYear()); 			// 2022
+        	// Month
+				ld1.getMonth()); 			// APRIL
+        	// MonthValue
+				ld1.getMonthValue()); 		// 4
+        	// DayOfMonth
+				ld1.getDayOfMonth()); 		// 15
+        	// DayOfYear
+				ld1.getDayOfYear()); 		// 105
+        	// DayOfWeek
+				ld1.getDayOfWeek()); 		// FRIDAY
+
+## Conversiones
+ 		// Convert LocalDate to LocalDateTime
+        LocalDate ld1 = LocalDate.of(2021, Month.DECEMBER,10);	// 2021-12-10
+	        // First Method
+    		    LocalDateTime ldtConver = ld1.atStartOfDay();	// 2021-12-10T00:00
+
+	        // Second Method
+    		    LocalDateTime ldtConver2 = ld1.atTime(12, 30);	// 2021-12-10T12:30
+
+		// Convert LocalDateTime to LocalDate
+			LocalDateTime ldt1 = LocalDateTime.of(2020,Month.APRIL, 15, 23, 00);	//2020-04-15T23:00
+	        LocalDate ldConvert = ldt1.toLocalDate();								//2020-04-15
+
+		// Convert LocalDateTime to LocalTime
+			LocalDateTime ldt1 = LocalDateTime.of(2020,Month.APRIL, 15, 23, 00);	//2020-04-15T23:00
+			LocalTime ltConvert = ldt1.toLocalTime();								//23:00
+
+## Comparaciones
+		LocalDate ld1 = LocalDate.of(2020, 12, 4);
+        LocalDate ld2 = LocalDate.of(2020, 12, 5);
+        LocalDate ld3 = LocalDate.of(2020, 12, 4);
+
+		// Compara la fecha, si esta despues de otra fecha
+        	ld1.isAfter(ld2)	// True
+       
+	   	// Compara si las fechas son iguales
+        	ld1.isEqual(ld3)	// True
+        	ld1.equals(ld3)		// True
+
+## Formato
+	// LocalDate
+		// Formatos por defecto
+ 		LocalDate ld1 = LocalDate.of(2021, Month.MAY, 16);
+        String ft1 = ld1.format(DateTimeFormatter.ISO_LOCAL_DATE);
+        String ft2 = ld1.format(DateTimeFormatter.ISO_ORDINAL_DATE);
+        
+		// Diseño propio de formato
+        DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("dd/MMMM/yyyy");
+        String fdesing = ld1.format(dtf1);
+        System.out.println(fdesing);
+
+
+	// LocalDateTime
+		// Formatos por defecto
+		LocalDateTime ldt1 = LocalDateTime.now();
+        String fld1 = ldt1.format(DateTimeFormatter.ISO_DATE_TIME);
+
+		// Diseño propio de formato
+        DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("hh:mm:ss MMMM yyyy");
+        String fdesigner= ldt1.format(dtf1);
+
+## Parse
+Permite convertir de String a LocalDate o LocalDateTime
+	// LocalDate
+		// Con formato por defecto
+			String date1 = "2021-10-20";
+			LocalDate ld = LocalDate.parse(date1); // formato ISO_DATE por defecto
+			String date2 = "20211020";
+			LocalDate ld2 = LocalDate.parse(date2, DateTimeFormatter.BASIC_ISO_DATE); // Establecer formato
+
+        // Parse Diseñado
+			String dateDesig = "2020/01/12";
+			LocalDate ldDesig = LocalDate.parse(dateDesig, DateTimeFormatter.ofPattern("yyyy/dd/MM"));
+        
+
+	// Parse LocalDateTime
+        String dateTime1 = "2020-12-08T12:30";
+        LocalDateTime ldt1 = LocalDateTime.parse(dateTime1); // formato ISO_DATE_TIME por defecto
+        LocalDateTime ldt2 = LocalDateTime.parse(dateTime1, DateTimeFormatter.ISO_DATE_TIME); // ISO_DATE yyyy-MM-ddT:hh:mm
+        
