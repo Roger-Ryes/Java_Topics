@@ -492,7 +492,6 @@ espera hasta que el primero termine
 | String        					| StringBuffer/StringBuilder	|
 | :---:   							| :---:		    				|
 | str.concat("va")					| sb.append("va");				|
-| :---:   							| :---: 	    				|
 |str.replace("origin", "toReplace")	|sb.replace(init,end, "text"); //init: NoIncluida, end: Incluido|
 
 ### Metodos NO equivalentes
