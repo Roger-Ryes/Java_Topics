@@ -488,13 +488,13 @@ Tienen los mismos metodos.
 StringBuffer es ThreadSafe, es decir tiene metodos Synchronized, lo que permite que en un esquema multihilos,
 si exista un metodo de un objeto accedido por multiples hilos a la vez, solo uno puede entrar y el otro
 espera hasta que el primero termine
-### Metodos equivalentes
+## Metodos equivalentes
 | String        					| StringBuffer/StringBuilder	|
 | :---:   							| :---:		    				|
 | str.concat("va")					| sb.append("va");				|
 |str.replace("origin", "toReplace")	|sb.replace(init,end, "text"); //init: NoIncluida, end: Incluido|
 
-### Metodos NO equivalentes
+## Metodos NO equivalentes
 		// Origin: Hola mundo programer
 		// Delete
 			sb1.delete(5, 10); 			// Hola  programer
@@ -505,7 +505,7 @@ espera hasta que el primero termine
 		// Reverse
         	sb1.reverse();				// remargorpODALOC  aloH
 
-### Metodos Comunes
+## Metodos Comunes
 Se usan igual tanto para String, StringBuffer y StringBuilder
 		// Origin: Hola mundo java metodos comunes
 		// CharAt
@@ -522,12 +522,12 @@ Se usan igual tanto para String, StringBuffer y StringBuilder
 			String ret = sb1.substring(2, 10);	// la mundo
 En StringBuffer y StringBuilder al usar "substring", se debe guardar en otra variable
 
-### Equals en String, StringBuffer/StringBuilder
+## Equals en String, StringBuffer/StringBuilder
 String: Sobreescribe "equals" para comparar el contenido de la cadena
 StringBuffer/StringBuilder: NO SOBREESCRIBE equals
 ver E_MetodoEquals
 
-### Metodos Solo en String
+## Metodos Solo en String
 		// Origin: " Hola Mundo ";
 		// Trim
 			cadena.trim();			// "Hola Mundo"
@@ -539,7 +539,7 @@ ver E_MetodoEquals
 		// equalsIgnoreCase
 			"Hola Mundo".equalsIgnoreCase("hOla mUndo")		// true, ignora el case
 
-### Resumen Metodos
+## Resumen Metodos
 | String        	| Similar		|StringBuffer/StringBuilder	|
 | :---:   			| :---:		   	|:---:						|
 |trim				|length			|delete						|
