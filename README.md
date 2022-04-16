@@ -462,3 +462,36 @@ ver (A_SobreCargaData)
         a_sobre.m1(y);
         a_sobre.m1(z);
     }
+
+# String
+## String
+String es inmutable. Los metodos de String DEVUELVEN UN NUEVO String, no modifica el String original
+		String a = "abc"; // abc
+        String result = a.toUpperCase(); // ABC
+## StringBuffer
+StringBuffer si es inmutable. Los metodos de StringBuffer NO DEVUELVEN UN NUEVO String, MODIFICA EL STRING
+Se debe inicializar
+        StringBuffer sb = new StringBuffer("test");
+        StringBuffer sb = "asd"; // NO se puede, se debe instanciar
+### Constructor StringBuffer
+		// Asigno un valor
+		StringBuffer sb2 = new StringBuffer("Hola mundo");
+		// Asigno la capacidad (.capacity)
+		StringBuffer sb3 = new StringBuffer(5);
+## toString - Convertir StringBuffer a String
+	 	StringBuffer val = new StringBuffer(5);
+        val.append("Hola ");
+		 String con = val.toString();
+
+## StringBuffer y StringBuilder
+Tienen los mismos metodos.
+StringBuffer es ThreadSafe, es decir tiene metodos Synchronized, lo que permite que en un esquema multihilos,
+si exista un metodo de un objeto accedido por multiples hilos a la vez, solo uno puede entrar y el otro
+espera hasta que el primero termine
+| Metodos equivalentes												|
+| :---:   							| :-: 		    				|
+| String        					| StringBuffer/StringBuilder	|
+| :---:   							| :-: 		    				|
+| str.concat("va")					| sb.append("va");				|
+| :---:   							| :-: 		    				|
+|str.replace("origin", "toReplace")	|sb.replace(init,end, "text"); //init: NoIncluida, end: Incluido|
