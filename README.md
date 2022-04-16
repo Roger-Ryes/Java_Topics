@@ -333,13 +333,16 @@ En un contenedor (byte) no se puede colocar algo mas grande (int)
 	by=in;		// No se puede
 
 Un "entero" puedo guardar en un "flotante"
-        f = lo;
+        
+	f = lo;
 
 A un "char" se le puedo mandar codigo ASCII
-        c=123;
+        
+	c=123;
         
 Un char se puede guardar en un entero
-        in = c;
+        
+	in = c;
 
 Flotantes
         
