@@ -554,11 +554,10 @@ java -version
 javac
 
 ## Ejecutar un archivo
-|Comando				|Definicion|
-| :---:   				| :---:		   	|
-|javac NameText.java	| Este comando crea el archivo "Class", el cual se puede ejecutar en cualquier parte 
-se linux, Windows o Mac (Multiplataforma)|
-|java NameText			| Ejecuta el archivo "Class" creado|
+|Comando		|Definicion															|
+| :---:   		| :---:		   														|
+|javac NameText.java	| Este comando crea el archivo "Class", el cual se puede ejecutar en cualquier parte se linux, Windows o Mac (Multiplataforma)	|
+|java NameText		| Ejecuta el archivo "Class" creado												|
 
 ## Paso de parametros
 	java ClassName Parametro1 Parametro2 Parametro...
