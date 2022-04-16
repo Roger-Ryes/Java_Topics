@@ -876,3 +876,76 @@ Para importar todo de un packete
 	private static void main(String[] args) {}
 	private void main(String[] args) {}
 	public static int main(String[] args) {}
+
+
+# Modificador final
+El "final" en una clase, inpide heredar
+	
+	// Clase Padre
+	public final class A_Padre
+
+	// Clase hija
+	public class A_Hijo extends A_Padre{ // No se puede llamar
+
+El "final" en un metodo, impide sobreescribir
+
+	// Clase Padre, Metodo
+	public final void dormir(){}
+
+	// Clase hija, Metodo
+	public void dormir() {} // No permite sobreescribir
+
+
+El interfaz necesita ser sobreescrito, al usar final en el interfaz marca error en el mismo interfaz
+
+	public interface B_Modificable {
+		final void modificar(); // Marcara error
+	}
+
+Al colocar "final" en un atributo, evita que el atributo no pueda ser modificado
+Solo el contructor puede dar valores al atributo final solo si no se dio un valor antes
+
+    private final ArrayList<String> students;
+    private final String name;
+
+    public C_Curso(String name){
+        students = new ArrayList<String>();
+        this.name = name;
+    }
+
+Si los atributos "final" tienen un valor, no se puede usar el constructor
+
+	private final ArrayList<String> students=new ArrayList<>();
+	private final String name="Eduar";
+
+	public C_Curso(String name){		// Marcara error
+		students = new ArrayList<String>();
+		this.name = name;
+	}
+
+En un "final" ArrayList, si puedo modificarlo, usar el add, remove, etc, porque se esta modificando
+su referencia.
+
+	private final ArrayList<String> students;
+	public C_Curso(String name){
+		students = new ArrayList<String>();
+	}
+	public void setValue(String name){
+        students.add(name);
+        students.remove(0);
+    }
+
+A un ArrayList no se puede apuntar a otro valor  
+
+	public void setValue(String name){
+		this.students = null;	// No se puede apuntar a otro lado
+        this.students = new ArrayList<>();
+	}
+
+Al usar "final" en los atributos de los metodos, tampoco se pueden modificar
+
+	public String metodo(final int i) {
+        for (int y=10; y==i; y--){
+            i++;						// No se puede modificar
+        }
+    }
