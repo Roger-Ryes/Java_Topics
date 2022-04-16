@@ -713,3 +713,60 @@ Permite convertir de String a LocalDate o LocalDateTime
         	LocalDateTime ldt1 = LocalDateTime.parse(dateTime1); // formato ISO_DATE_TIME por defecto
         	LocalDateTime ldt2 = LocalDateTime.parse(dateTime1, DateTimeFormatter.ISO_DATE_TIME); // ISO_DATE yyyy-MM-ddT:hh:mm
         
+# Lambda
+Se emplea si cumple estas condiciones, el interface solo tiene un metodo
+Se evita tener que instanciar 
+
+	| Interface								|
+	|:---:									|
+	|public interface A_Animal {	
+		void comer();
+	}										| 
+	| Sin Lambda							|
+	|aa.alimentar(new A_Perro());			|
+
+	| Con Lambda							|
+	|aa.alimentar(()->{
+		// codigo
+	})										|
+	| Lambda con parametros y return		|
+	|:---:									|
+	|Interface								|
+	|public boolean sustituible(int x);		|
+	|Lambda metodo 1						|
+	|aa.reemplazado((int valor)->{
+            return valor>5;
+        });									|
+	|Lambda metodo 2						|
+	|aa.reemplazado(valor -> valor>7);		|
+
+# Genericos
+List<T>, toma cualquier tipo de dato, sea String, boolean, Class, etc
+
+	public interface List<T>{
+		boolean add(T t);
+		T get(int index);
+	}
+
+	public class B_Ejemplo<T> {
+    	public T suma(T v1, T v2){
+			return v1;
+		}
+	}
+
+# Predicado 
+Es una interfaz con un generico
+El predicado tiene un unico metodo test que recibe un dato generico y retorna un booleano
+
+	import java.util.function.Predicate;
+
+	public interface Predicate<T>{
+		public boolean test(T t);
+	}
+
+
+Ejemplo practico ver B_PredicadoRemover
+
+	productos.removeIf((p)->{
+		return p.getStock()<30;
+	});
