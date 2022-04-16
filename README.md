@@ -231,13 +231,15 @@ Al importar un statico no solo se llama a la clase, sino tambien al metodo
 ## Tipos Exceptions
 ### Checked
 Son las que molestan en compilacion en cada punto
-|Ejm: 	IOException		 |
-|	 	WhateverException|	
+|Ejm: 	IOException		|
+|:---: 				|
+|	 WhateverException	|	
 
 ### Unchecked o RunTimeException
 Solo muestra el erro una vez se corra el proyecto
-|Ejm:	ArrayIndexOutOfBoundsException|
-|		NullPointerException		  |
+|Ejm:	ArrayIndexOutOfBoundsException	|
+|:---: 					|
+|	NullPointerException		|
 
 ## Lanzar Exceptiones
 	public void throwExceptionOne(int x) throws Exception{
@@ -261,6 +263,7 @@ Solo muestra el erro una vez se corra el proyecto
 		e.printStackTrace();
 	}
 - Propagar la exception (throws Exception)
+
 	public void tryExceptionTwo() throws Exception {
 		// spread this exception, First method
 		A_Lanzar thr = new A_Lanzar();
@@ -278,6 +281,7 @@ Exception
 # Flujo Exception
 El orden de la exceptiones influye dependiendo de la jerarquia.
 Primero van los hijos, luego los padres
+	
 	// Correcto
 	try {
 		System.out.println("Start");
@@ -311,13 +315,13 @@ Primero van los hijos, luego los padres
 
 # Tipos de datos
 ## Primitivos
-	byte by = 0;     // 8 ocupa bites
-    short sh = 0;    //16
-    int in = 0;      //32
-    long lo = 0;     //64
+    byte by = 0;    // 8 ocupa bites
+    short sh = 0;   // 16
+    int in = 0;     // 32
+    long lo = 0;    // 64
 
-	float f = 0;    //32
-    double d = 0;   //64
+    float f = 0;    // 32
+    double d = 0;   // 64
 
     char c='a';     //16
 
@@ -325,10 +329,11 @@ Primero van los hijos, luego los padres
 
 
 En un contenedor (byte) no se puede colocar algo mas grande (int)
+	
 	byte by = 0;     // 8 ocupa bites
 	int in = 0;      //32
 
-    by=in;
+    	by=in;		// No se puede
 
 Un "entero" puedo guardar en un "flotante"
         f = lo;
@@ -340,22 +345,25 @@ Un char se puede guardar en un entero
         in = c;
 
 Flotantes
-        f=10;
+        
+	f=10;
         f=10.10; // Es un Double, un double es mayor a un float
         d=10.10;
 
 Existen algunos sufijos para indicar explicitamente el tipo de dato
-        f=10.10f; 		// f/F, float
+        
+	f=10.10f; 	// f/F, float
         d= 100.110D;	// d/D, double
-        lo=10L;			// l/L,	long
+        lo=10L;		// l/L,	long
 
 ## Casting
 Ya que en un contenedor (byte) no se puede colocar algo mas grande (int), se castea
-		by = (byte)in;
-		fl = (float)100.1;
+	
+	by = (byte)in;
+	fl = (float)100.1;
 
 ## Operadores
-	   "Suma"
+	"Suma"
         num1 + num2 + num3
 
         // Cuando se junta un string, se concatena
@@ -365,7 +373,7 @@ Ya que en un contenedor (byte) no se puede colocar algo mas grande (int), se cas
         "ConcatenacionYSuma: "+(num1 + num2 + num3)
 
 ## Valor Por Defecto
-		byte by;     // 0
+	byte by;     // 0
         short sh;    // 0
         int in;      // 0
         long lo;     // 0
@@ -381,7 +389,8 @@ Ya que en un contenedor (byte) no se puede colocar algo mas grande (int), se cas
 Son clases que envuelven un valor primitivo.
 Al ser clases, el valor por defecto de un atributo wrapper es NULL 
 Es declaran con mayusculas, y no hay para "char"
-		Byte by;     // 0
+		
+	Byte by;     // 0
         Short sh;    // 0
         Int in;      // 0
         Long lo;     // 0
@@ -391,7 +400,8 @@ Es declaran con mayusculas, y no hay para "char"
 
         Boolean bl; // false
 En operaciones de wrappers, se debe usar equals y no ==
-		Integer i1 = 1200;
+		
+	Integer i1 = 1200;
         Integer i2 = 1200;
         // No apuntan al mismo objeto
         if(i1==i2){
@@ -410,14 +420,16 @@ En operaciones de wrappers, se debe usar equals y no ==
 
 ## Unboxing
 Implicitamente llama al metodo
-		Integer i1= 100; // Internamente i1 = new Integer(100)
+		
+	Integer i1= 100; // Internamente i1 = new Integer(100)
 
         // unboxing Permite que se comporte como un primitivo
         int i2 = i1; // Unboxing | internamente i2 = i1.intValue();
 
 ## Constructores
 Dependiendo del tipo van a aceptar su tipo o valores de string
-		Short sh = new Short((short)0);
+		
+	Short sh = new Short((short)0);
         Short sh1 = new Short("10");
 
         Long lg = new Long("20");
@@ -436,8 +448,8 @@ Si no encuentra hace BOXING y busca su WRAPPER correspondiente ("double" va a "I
 Si no encuentra el wrapper especifico busca una clase padre del Wrapper (Numbre, Object)
 ver (A_SobreCargaData)
 
-	public void m1(int x){
-        System.out.println("int");
+    public void m1(int x){
+	System.out.println("int");
     }
     public void m1(Integer x){
         System.out.println("Integer");
@@ -453,7 +465,7 @@ ver (A_SobreCargaData)
         System.out.println("Number");
     }
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         int x = 100;
         long y = 100;
         double z = 100;
@@ -466,60 +478,67 @@ ver (A_SobreCargaData)
 # String
 ## String
 String es inmutable. Los metodos de String DEVUELVEN UN NUEVO String, no modifica el String original
-		String a = "abc"; // abc
+	
+	String a = "abc"; // abc
         String result = a.toUpperCase(); // ABC
+	
 ## StringBuffer
 StringBuffer si es inmutable. Los metodos de StringBuffer NO DEVUELVEN UN NUEVO String, MODIFICA EL STRING
 Se debe inicializar
-        StringBuffer sb = new StringBuffer("test");
+        
+	StringBuffer sb = new StringBuffer("test");
         StringBuffer sb = "asd"; // NO se puede, se debe instanciar
+	
 ### Constructor StringBuffer
-		// Asigno un valor
-		StringBuffer sb2 = new StringBuffer("Hola mundo");
-		// Asigno la capacidad (.capacity)
-		StringBuffer sb3 = new StringBuffer(5);
+	// Asigno un valor
+	StringBuffer sb2 = new StringBuffer("Hola mundo");
+	// Asigno la capacidad (.capacity)
+	StringBuffer sb3 = new StringBuffer(5);
+	
 ## toString - Convertir StringBuffer a String
-	 	StringBuffer val = new StringBuffer(5);
+	StringBuffer val = new StringBuffer(5);
         val.append("Hola ");
-		 String con = val.toString();
+	 String con = val.toString();
 
 ## StringBuffer y StringBuilder
 Tienen los mismos metodos.
 StringBuffer es ThreadSafe, es decir tiene metodos Synchronized, lo que permite que en un esquema multihilos,
 si exista un metodo de un objeto accedido por multiples hilos a la vez, solo uno puede entrar y el otro
 espera hasta que el primero termine
+
 ## Metodos equivalentes
-| String        					| StringBuffer/StringBuilder	|
-| :---:   							| :---:		    				|
-| str.concat("va")					| sb.append("va");				|
+| String        			| StringBuffer/StringBuilder					|
+| :---:   				| :---:		    						|
+| str.concat("va")			| sb.append("va");						|
 |str.replace("origin", "toReplace")	|sb.replace(init,end, "text"); //init: NoIncluida, end: Incluido|
 
 ## Metodos NO equivalentes
-		// Origin: Hola mundo programer
-		// Delete
-			sb1.delete(5, 10); 			// Hola  programer
+	// Origin: Hola mundo programer
+	// Delete
+		sb1.delete(5, 10); 		// Hola  programer
         
-		// Insert
-    	    sb1.insert(6, "COLADO");	// Hola  COLADOprogramer
+	// Insert
+    	    	sb1.insert(6, "COLADO");	// Hola  COLADOprogramer
         
-		// Reverse
-        	sb1.reverse();				// remargorpODALOC  aloH
+	// Reverse
+        	sb1.reverse();			// remargorpODALOC  aloH
 
 ## Metodos Comunes
 Se usan igual tanto para String, StringBuffer y StringBuilder
-		// Origin: Hola mundo java metodos comunes
-		// CharAt
+	
+	// Origin: Hola mundo java metodos comunes
+	// CharAt
         	sb1.charAt(9)			// o
 
         // IndexOF
         	sb1.indexOf("do")		// 8
         	sb1.indexOf("do", 12) 	// 20
         
-		// length
+	// length
         	sb1.length()			// 32
 
-		// SubString
-			String ret = sb1.substring(2, 10);	// la mundo
+	// SubString
+		String ret = sb1.substring(2, 10);	// la mundo
 En StringBuffer y StringBuilder al usar "substring", se debe guardar en otra variable
 
 ## Equals en String, StringBuffer/StringBuilder
@@ -535,19 +554,19 @@ ver E_MetodoEquals
 			cadena.isEmpty());		// false
 
 		// equals
-			"Hola Mundo".equals("hOla mUndo") 				// false
+			"Hola Mundo".equals("hOla mUndo") 		// false
 		// equalsIgnoreCase
-			"Hola Mundo".equalsIgnoreCase("hOla mUndo")		// true, ignora el case
+			"Hola Mundo".equalsIgnoreCase("hOla mUndo")	// true, ignora el case
 
 ## Resumen Metodos
-| String        	| Similar		|StringBuffer/StringBuilder	|
-| :---:   			| :---:		   	|:---:						|
-|trim				|length			|delete						|
-|toUpperCase		|charAt			|insert						|
-|toLowerCase		|indexOf		|							|
-|isEmpty			|"substring"	|reverse					|
-|replace			|equals			|replace					|
-|equalsIgnoreCase	|				|							|
+| String        	| Similar	|StringBuffer/StringBuilder	|
+| :---:   		| :---:		|:---:				|
+|trim			|length		|delete				|
+|toUpperCase		|charAt		|insert				|
+|toLowerCase		|indexOf	|				|
+|isEmpty		|"substring"	|reverse			|
+|replace		|equals		|replace			|
+|equalsIgnoreCase	|		|				|
 
 # Compilacion y ejecucion por consola
 java -version
@@ -565,49 +584,52 @@ javac
 	java Test true abc "Hola mundo"
 
 
+
 # LocalDate y LocalDateTime
 ## Instanciar
 ### Local Date 
 No tiene constructor accesible
-		// First instance
-        	LocalDate ld = LocalDate.now();
-        
+	
+	// First instance
+	LocalDate ld = LocalDate.now();
+
         // Second instance
-        	ld = LocalDate.of(2020,8,20);
+	ld = LocalDate.of(2020,8,20);
         
         // Third instance
-        	ld = LocalDate.of(2020, Month.FEBRUARY, 18);
+	ld = LocalDate.of(2020, Month.FEBRUARY, 18);
 
-		// Time Exception
-        	ld = LocalDate.of(2020, Month.FEBRUARY, 33);
-        	// Se ejecuta cada vez que sale del rango
+	// Time Exception
+	ld = LocalDate.of(2020, Month.FEBRUARY, 33); 	// Se ejecuta cada vez que sale del rango
 
 ### Local Date Time
 No tiene un constructor
-        // First intance
-        LocalDateTime ldt1 = LocalDateTime.now(); // yyyy-MM-ddThh:mm:ss.ms
+        
+	// First intance
+        LocalDateTime ldt1 = LocalDateTime.now(); 		// yyyy-MM-ddThh:mm:ss.ms
         
         // Second instance
-        LocalDateTime ldt2 = LocalDateTime.of(2020,3,15,3,50); // yyyy-MM-ddThh:mm
+        LocalDateTime ldt2 = LocalDateTime.of(2020,3,15,3,50); 	// yyyy-MM-ddThh:mm
         
         // Third instance
         LocalDateTime ldt3 = LocalDateTime.of(2021, Month.AUGUST,26,8,00, 50, 4); // yyyy-MM-ddThh:mm:ss.ms
 
 ## Operaciones con fechas
 El LocalDate es inmutable, al igual que String, la fecha original no cambia, devuelve una nueva fecha
-        //LocalDate
+        
+	//LocalDate
 		LocalDate ld1 = LocalDate.now();
-        	//Days
-        		LocalDate ld2 = ld1.plusDays(20); // No modifica el locaDate origina, devuelve una nueva locaDate
+		//Days
+			LocalDate ld2 = ld1.plusDays(20); // No modifica el locaDate origina, devuelve una nueva locaDate
 
-        	//Month
-        		LocalDate ld3 = ld1.plusMonths(12);
+		//Month
+			LocalDate ld3 = ld1.plusMonths(12);
 
-        	//Year
-        		LocalDate ld4 = ld1.plusYears(20);
+		//Year
+			LocalDate ld4 = ld1.plusYears(20);
 
         //LocalDateTime
-        LocalDateTime ldt1 = LocalDateTime.now();
+        	LocalDateTime ldt1 = LocalDateTime.now();
         	//Months
         		LocalDateTime ldt2 = ldt1.plusMonths(5);
 
@@ -618,46 +640,46 @@ El LocalDate es inmutable, al igual que String, la fecha original no cambia, dev
         		LocalDateTime ldt4 = ldt1.plusMinutes(120);
 
 ## Obtener informacion
-		LocalDate ld1 = LocalDate.now();	// 2022-04-15
+		LocalDate ld1 = LocalDate.now(); // 2022-04-15
         	// Year
-				ld1.getYear()); 			// 2022
+			ld1.getYear()); 	// 2022
         	// Month
-				ld1.getMonth()); 			// APRIL
+			ld1.getMonth()); 	// APRIL
         	// MonthValue
-				ld1.getMonthValue()); 		// 4
+			ld1.getMonthValue()); 	// 4
         	// DayOfMonth
-				ld1.getDayOfMonth()); 		// 15
+			ld1.getDayOfMonth()); 	// 15
         	// DayOfYear
-				ld1.getDayOfYear()); 		// 105
+			ld1.getDayOfYear()); 	// 105
         	// DayOfWeek
-				ld1.getDayOfWeek()); 		// FRIDAY
+			ld1.getDayOfWeek()); 	// FRIDAY
 
 ## Conversiones
- 		// Convert LocalDate to LocalDateTime
-        LocalDate ld1 = LocalDate.of(2021, Month.DECEMBER,10);	// 2021-12-10
-	        // First Method
-    		    LocalDateTime ldtConver = ld1.atStartOfDay();	// 2021-12-10T00:00
+ 	// Convert LocalDate to LocalDateTime
+        LocalDate ld1 = LocalDate.of(2021, Month.DECEMBER,10);		// 2021-12-10
+	     // First Method
+    		LocalDateTime ldtConver = ld1.atStartOfDay();		// 2021-12-10T00:00
 
-	        // Second Method
-    		    LocalDateTime ldtConver2 = ld1.atTime(12, 30);	// 2021-12-10T12:30
+	     // Second Method
+    		LocalDateTime ldtConver2 = ld1.atTime(12, 30);		// 2021-12-10T12:30
 
-		// Convert LocalDateTime to LocalDate
-			LocalDateTime ldt1 = LocalDateTime.of(2020,Month.APRIL, 15, 23, 00);	//2020-04-15T23:00
-	        LocalDate ldConvert = ldt1.toLocalDate();								//2020-04-15
+	// Convert LocalDateTime to LocalDate
+	LocalDateTime ldt1 = LocalDateTime.of(2020,Month.APRIL, 15, 23, 00);	//2020-04-15T23:00
+	LocalDate ldConvert = ldt1.toLocalDate();				//2020-04-15
 
-		// Convert LocalDateTime to LocalTime
-			LocalDateTime ldt1 = LocalDateTime.of(2020,Month.APRIL, 15, 23, 00);	//2020-04-15T23:00
-			LocalTime ltConvert = ldt1.toLocalTime();								//23:00
+	// Convert LocalDateTime to LocalTime
+	LocalDateTime ldt1 = LocalDateTime.of(2020,Month.APRIL, 15, 23, 00);	//2020-04-15T23:00
+	LocalTime ltConvert = ldt1.toLocalTime();				//23:00
 
 ## Comparaciones
-		LocalDate ld1 = LocalDate.of(2020, 12, 4);
+	LocalDate ld1 = LocalDate.of(2020, 12, 4);
         LocalDate ld2 = LocalDate.of(2020, 12, 5);
         LocalDate ld3 = LocalDate.of(2020, 12, 4);
 
-		// Compara la fecha, si esta despues de otra fecha
+	// Compara la fecha, si esta despues de otra fecha
         	ld1.isAfter(ld2)	// True
        
-	   	// Compara si las fechas son iguales
+	// Compara si las fechas son iguales
         	ld1.isEqual(ld3)	// True
         	ld1.equals(ld3)		// True
 
@@ -665,40 +687,40 @@ El LocalDate es inmutable, al igual que String, la fecha original no cambia, dev
 	// LocalDate
 		// Formatos por defecto
  		LocalDate ld1 = LocalDate.of(2021, Month.MAY, 16);
-        String ft1 = ld1.format(DateTimeFormatter.ISO_LOCAL_DATE);
-        String ft2 = ld1.format(DateTimeFormatter.ISO_ORDINAL_DATE);
+        	String ft1 = ld1.format(DateTimeFormatter.ISO_LOCAL_DATE);
+        	String ft2 = ld1.format(DateTimeFormatter.ISO_ORDINAL_DATE);
         
 		// Diseño propio de formato
-        DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("dd/MMMM/yyyy");
-        String fdesing = ld1.format(dtf1);
-        System.out.println(fdesing);
-
+        	DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("dd/MMMM/yyyy");
+        	String fdesing = ld1.format(dtf1);
+        	
 
 	// LocalDateTime
 		// Formatos por defecto
 		LocalDateTime ldt1 = LocalDateTime.now();
-        String fld1 = ldt1.format(DateTimeFormatter.ISO_DATE_TIME);
+        	String fld1 = ldt1.format(DateTimeFormatter.ISO_DATE_TIME);
 
 		// Diseño propio de formato
-        DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("hh:mm:ss MMMM yyyy");
-        String fdesigner= ldt1.format(dtf1);
+        	DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("hh:mm:ss MMMM yyyy");
+        	String fdesigner= ldt1.format(dtf1);
 
 ## Parse
 Permite convertir de String a LocalDate o LocalDateTime
-	// LocalDate
-		// Con formato por defecto
-			String date1 = "2021-10-20";
-			LocalDate ld = LocalDate.parse(date1); // formato ISO_DATE por defecto
-			String date2 = "20211020";
-			LocalDate ld2 = LocalDate.parse(date2, DateTimeFormatter.BASIC_ISO_DATE); // Establecer formato
+	
+	// Parse LocalDate
+	  // Con formato por defecto
+		String date1 = "2021-10-20";
+		LocalDate ld = LocalDate.parse(date1); 		// formato ISO_DATE por defecto
+		String date2 = "20211020";
+		LocalDate ld2 = LocalDate.parse(date2, DateTimeFormatter.BASIC_ISO_DATE); // Establecer formato
 
-        // Parse Diseñado
-			String dateDesig = "2020/01/12";
-			LocalDate ldDesig = LocalDate.parse(dateDesig, DateTimeFormatter.ofPattern("yyyy/dd/MM"));
+      	  // Parse Diseñado
+		String dateDesig = "2020/01/12";
+		LocalDate ldDesig = LocalDate.parse(dateDesig, DateTimeFormatter.ofPattern("yyyy/dd/MM"));
         
 
 	// Parse LocalDateTime
-        String dateTime1 = "2020-12-08T12:30";
-        LocalDateTime ldt1 = LocalDateTime.parse(dateTime1); // formato ISO_DATE_TIME por defecto
-        LocalDateTime ldt2 = LocalDateTime.parse(dateTime1, DateTimeFormatter.ISO_DATE_TIME); // ISO_DATE yyyy-MM-ddT:hh:mm
+        	String dateTime1 = "2020-12-08T12:30";
+        	LocalDateTime ldt1 = LocalDateTime.parse(dateTime1); // formato ISO_DATE_TIME por defecto
+        	LocalDateTime ldt2 = LocalDateTime.parse(dateTime1, DateTimeFormatter.ISO_DATE_TIME); // ISO_DATE yyyy-MM-ddT:hh:mm
         
