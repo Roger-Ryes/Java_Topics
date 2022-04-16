@@ -96,11 +96,8 @@ ver Dinero.java
 
 ### Gerarquia de re-estrictivo
 | PUBLIC        |public String x;   |menos rees.|
-| :---:   	| :-: 		    | :-: 	|
 | PROTECTED     |protected String x;|		|
-| :---:   	| :-: 		    | :-: 	|
 | DEFAULT       |String x;	    |		|
-| :---:   	| :-: 		    | :-: 	|
 | PRIVATE       |private String x;  |mas rees.  |
 
 ver en: 5_Abstractas_Interfaces | com.cmc.modificadorDeAcceso
@@ -112,11 +109,8 @@ Se puede sobreescribir un modificador de acceso, pero solo se puede hacerlo meno
 
 ### Gerarquia de re-estrictivo
 | PUBLIC        |public String x;   |menos rees.|
-| :---:   	| :-: 		    | :-: 	|
 | PROTECTED     |protected String x;|		|
-| :---:   	| :-: 		    | :-: 	|
 | DEFAULT       |String x;	    |		|
-| :---:   	| :-: 		    | :-: 	|
 | PRIVATE       |private String x;  |mas rees.  |
 
 	Ejemplo 1                               Ejemplo 2
@@ -212,14 +206,14 @@ Al importar un statico no solo se llama a la clase, sino tambien al metodo
 	import static java.lang.Integer.*;
 
 	public class D_ImportsEstaticos {
-		// Sin import
-	//    double valor = Math.random();
-	//    double valor2 = Math.abs(valor) + Math.PI;
+	// Sin import
+		//    double valor = Math.random();
+		//    double valor2 = Math.abs(valor) + Math.PI;
 
-	//    int x = Integer.parseInt("10");
+		//    int x = Integer.parseInt("10");
 
 
-		// Con import
+	// Con import
 		double valor = random();
 		double valor2 = abs(valor) + PI;
 
@@ -333,7 +327,7 @@ En un contenedor (byte) no se puede colocar algo mas grande (int)
 	byte by = 0;     // 8 ocupa bites
 	int in = 0;      //32
 
-    	by=in;		// No se puede
+	by=in;		// No se puede
 
 Un "entero" puedo guardar en un "flotante"
         f = lo;
@@ -347,14 +341,14 @@ Un char se puede guardar en un entero
 Flotantes
         
 	f=10;
-        f=10.10; // Es un Double, un double es mayor a un float
-        d=10.10;
+	f=10.10; // Es un Double, un double es mayor a un float
+	d=10.10;
 
 Existen algunos sufijos para indicar explicitamente el tipo de dato
         
 	f=10.10f; 	// f/F, float
-        d= 100.110D;	// d/D, double
-        lo=10L;		// l/L,	long
+	d= 100.110D;	// d/D, double
+	lo=10L;		// l/L,	long
 
 ## Casting
 Ya que en un contenedor (byte) no se puede colocar algo mas grande (int), se castea
@@ -364,82 +358,81 @@ Ya que en un contenedor (byte) no se puede colocar algo mas grande (int), se cas
 
 ## Operadores
 	"Suma"
-        num1 + num2 + num3
+	num1 + num2 + num3
 
-        // Cuando se junta un string, se concatena
-        "Concatenacion: "+num1 + num2 + num3
-        
+	// Cuando se junta un string, se concatena
+	"Concatenacion: "+num1 + num2 + num3
+
 		// Para que sume y concatene
-        "ConcatenacionYSuma: "+(num1 + num2 + num3)
+	"ConcatenacionYSuma: "+(num1 + num2 + num3)
 
 ## Valor Por Defecto
 	byte by;     // 0
-        short sh;    // 0
-        int in;      // 0
-        long lo;     // 0
+	short sh;    // 0
+	int in;      // 0
+	long lo;     // 0
 
-        float fl;    // 0.0
-        double db;   // 0.0
+	float fl;    // 0.0
+	double db;   // 0.0
 
-        char ch;     // u0000 "Espacio en blanco"
+	char ch;     // u0000 "Espacio en blanco"
 
-        boolean bl; // false
+	boolean bl; // false
 
 ## Wrappers
 Son clases que envuelven un valor primitivo.
 Al ser clases, el valor por defecto de un atributo wrapper es NULL 
 Es declaran con mayusculas, y no hay para "char"
-		
+
 	Byte by;     // 0
-        Short sh;    // 0
-        Int in;      // 0
-        Long lo;     // 0
+	Short sh;    // 0
+	Int in;      // 0
+	Long lo;     // 0
 
-        Float fl;    // 0.0
-        Double db;   // 0.0
+	Float fl;    // 0.0
+	Double db;   // 0.0
 
-        Boolean bl; // false
+	Boolean bl; // false
 En operaciones de wrappers, se debe usar equals y no ==
 		
 	Integer i1 = 1200;
-        Integer i2 = 1200;
-        // No apuntan al mismo objeto
-        if(i1==i2){
-            System.out.println("Iguales");
-        }else{
-            System.out.println("Diferentes");
-        }
+	Integer i2 = 1200;
+	// No apuntan al mismo objeto
+	if(i1==i2){
+	    System.out.println("Iguales");
+	}else{
+	    System.out.println("Diferentes");
+	}
 
-        // Usar equals a usar wrappers
-        if(i1.equals(i2)){
-            System.out.println("Iguales");
-        }else{
-            System.out.println("Diferentes");
-        }
+	// Usar equals a usar wrappers
+	if(i1.equals(i2)){
+	    System.out.println("Iguales");
+	}else{
+	    System.out.println("Diferentes");
+	}
 
 
 ## Unboxing
 Implicitamente llama al metodo
 		
 	Integer i1= 100; // Internamente i1 = new Integer(100)
-
-        // unboxing Permite que se comporte como un primitivo
-        int i2 = i1; // Unboxing | internamente i2 = i1.intValue();
+	// unboxing Permite que se comporte como un primitivo
+	int i2 = i1; // Unboxing | internamente i2 = i1.intValue();
 
 ## Constructores
 Dependiendo del tipo van a aceptar su tipo o valores de string
 		
 	Short sh = new Short((short)0);
-        Short sh1 = new Short("10");
+	Short sh1 = new Short("10");
 
-        Long lg = new Long("20");
+	Long lg = new Long("20");
 
-        Float ft = new Float(10.10D);
+	Float ft = new Float(10.10D);
 
-        Boolean bl0 = new Boolean(false);
-        Boolean bl1 = new Boolean("true");
-        Boolean bl2 = new Boolean("True");
-        Boolean bl3 = new Boolean("Python");
+	Boolean bl0 = new Boolean(false);
+	Boolean bl1 = new Boolean("true");
+	Boolean bl2 = new Boolean("True");
+	Boolean bl3 = new Boolean("Python");
 
 ## Sobrecarga
 Busca el metodo exacto, del atributo de dato exacto	
@@ -480,14 +473,14 @@ ver (A_SobreCargaData)
 String es inmutable. Los metodos de String DEVUELVEN UN NUEVO String, no modifica el String original
 	
 	String a = "abc"; // abc
-        String result = a.toUpperCase(); // ABC
+	String result = a.toUpperCase(); // ABC
 	
 ## StringBuffer
 StringBuffer si es inmutable. Los metodos de StringBuffer NO DEVUELVEN UN NUEVO String, MODIFICA EL STRING
 Se debe inicializar
         
 	StringBuffer sb = new StringBuffer("test");
-        StringBuffer sb = "asd"; // NO se puede, se debe instanciar
+	StringBuffer sb = "asd"; // NO se puede, se debe instanciar
 	
 ### Constructor StringBuffer
 	// Asigno un valor
@@ -497,8 +490,8 @@ Se debe inicializar
 	
 ## toString - Convertir StringBuffer a String
 	StringBuffer val = new StringBuffer(5);
-        val.append("Hola ");
-	 String con = val.toString();
+	val.append("Hola ");
+	String con = val.toString();
 
 ## StringBuffer y StringBuilder
 Tienen los mismos metodos.
@@ -515,11 +508,11 @@ espera hasta que el primero termine
 ## Metodos NO equivalentes
 	// Origin: Hola mundo programer
 	// Delete
-		sb1.delete(5, 10); 		// Hola  programer
-        // Insert
+		sb1.delete(5, 10);		// Hola  programer
+	// Insert
 		sb1.insert(6, "COLADO");	// Hola  COLADOprogramer
-        // Reverse
-        	sb1.reverse();			// remargorpODALOC  aloH
+	// Reverse
+		sb1.reverse();			// remargorpODALOC  aloH
 
 ## Metodos Comunes
 Se usan igual tanto para String, StringBuffer y StringBuilder
@@ -527,14 +520,11 @@ Se usan igual tanto para String, StringBuffer y StringBuilder
 	// Origin: Hola mundo java metodos comunes
 	// CharAt
         	sb1.charAt(9)			// o
-
-        // IndexOF
+	// IndexOF
         	sb1.indexOf("do")		// 8
         	sb1.indexOf("do", 12) 	// 20
-        
 	// length
         	sb1.length()			// 32
-
 	// SubString
 		String ret = sb1.substring(2, 10);	// la mundo
 En StringBuffer y StringBuilder al usar "substring", se debe guardar en otra variable
@@ -547,9 +537,9 @@ ver E_MetodoEquals
 ## Metodos Solo en String
 		// Origin: " Hola Mundo ";
 		// Trim
-			cadena.trim();			// "Hola Mundo"
+			cadena.trim();					// "Hola Mundo"
 		// isEmpty
-			cadena.isEmpty());		// false
+			cadena.isEmpty());				// false
 
 		// equals
 			"Hola Mundo".equals("hOla mUndo") 		// false
@@ -565,6 +555,7 @@ ver E_MetodoEquals
 |isEmpty		|"substring"	|reverse			|
 |replace		|equals		|replace			|
 |equalsIgnoreCase	|		|				|
+
 
 # Compilacion y ejecucion por consola
 java -version
@@ -589,16 +580,13 @@ javac
 No tiene constructor accesible
 	
 	// First instance
-	LocalDate ld = LocalDate.now();
-
-        // Second instance
-	ld = LocalDate.of(2020,8,20);
-        
-        // Third instance
-	ld = LocalDate.of(2020, Month.FEBRUARY, 18);
-
+		LocalDate ld = LocalDate.now();
+	// Second instance
+		ld = LocalDate.of(2020,8,20);
+	// Third instance
+		ld = LocalDate.of(2020, Month.FEBRUARY, 18);
 	// Time Exception
-	ld = LocalDate.of(2020, Month.FEBRUARY, 33); 	// Se ejecuta cada vez que sale del rango
+		ld = LocalDate.of(2020, Month.FEBRUARY, 33); 	// Se ejecuta cada vez que sale del rango
 
 ### Local Date Time
 No tiene un constructor
@@ -706,17 +694,14 @@ El LocalDate es inmutable, al igual que String, la fecha original no cambia, dev
 Permite convertir de String a LocalDate o LocalDateTime
 	
 	// Parse LocalDate
-	  // Con formato por defecto
-		String date1 = "2021-10-20";
-		LocalDate ld = LocalDate.parse(date1); 		// formato ISO_DATE por defecto
-		String date2 = "20211020";
-		LocalDate ld2 = LocalDate.parse(date2, DateTimeFormatter.BASIC_ISO_DATE); // Establecer formato
-
-      	  // Parse Diseñado
-		String dateDesig = "2020/01/12";
-		LocalDate ldDesig = LocalDate.parse(dateDesig, DateTimeFormatter.ofPattern("yyyy/dd/MM"));
-        
-
+		// Con formato por defecto
+			String date1 = "2021-10-20";
+			LocalDate ld = LocalDate.parse(date1); 		// formato ISO_DATE por defecto
+			String date2 = "20211020";
+			LocalDate ld2 = LocalDate.parse(date2, DateTimeFormatter.BASIC_ISO_DATE); // Establecer formato
+		// Parse Diseñado
+			String dateDesig = "2020/01/12";
+			LocalDate ldDesig = LocalDate.parse(dateDesig, DateTimeFormatter.ofPattern("yyyy/dd/MM"));
 	// Parse LocalDateTime
         	String dateTime1 = "2020-12-08T12:30";
         	LocalDateTime ldt1 = LocalDateTime.parse(dateTime1); // formato ISO_DATE_TIME por defecto
