@@ -516,11 +516,9 @@ espera hasta que el primero termine
 	// Origin: Hola mundo programer
 	// Delete
 		sb1.delete(5, 10); 		// Hola  programer
-        
-	// Insert
-    	    	sb1.insert(6, "COLADO");	// Hola  COLADOprogramer
-        
-	// Reverse
+        // Insert
+		sb1.insert(6, "COLADO");	// Hola  COLADOprogramer
+        // Reverse
         	sb1.reverse();			// remargorpODALOC  aloH
 
 ## Metodos Comunes
