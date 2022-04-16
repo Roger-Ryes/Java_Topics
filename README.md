@@ -847,3 +847,17 @@ El objecto que va a Garbage Collection es "new Persona("Bruno")"
 		case 3: nameDay="WEDNESDAY"; break;
 		case 4: nameDay="MONDAY"; break;
 	}
+
+# Package e import
+Para llegar a la clase de otro paquete, se debe importar
+Al importar se debe llegar solo hasta la clase
+
+	import package1.ClasePack1;
+	import package1.ClasePack2;
+	import package1.com.ClasePackCom1;
+	import package1.com.ClasePackCom2;
+
+Para importar todo de un packete
+
+	import package1.*;
+	import package1.com.*;
