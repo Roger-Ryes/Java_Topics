@@ -95,10 +95,11 @@ ver Dinero.java
 
 
 ### Gerarquia de re-estrictivo
-| PUBLIC        |public String x;   |menos rees.|
-| PROTECTED     |protected String x;|		|
-| DEFAULT       |String x;	    |		|
-| PRIVATE       |private String x;  |mas rees.  |
+| PUBLIC        |public String x;   	|menos rees.	|
+|:---:		|:---:			|:---:		|
+| PROTECTED     |protected String x;	|		|
+| DEFAULT       |String x;	    	|		|
+| PRIVATE       |private String x;  	|mas rees.  	|
 
 ver en: 5_Abstractas_Interfaces | com.cmc.modificadorDeAcceso
 
@@ -108,10 +109,11 @@ ver en: 5_Abstractas_Interfaces | com.cmc.modificadorDeAcceso
 Se puede sobreescribir un modificador de acceso, pero solo se puede hacerlo menos reestrictivo
 
 ### Gerarquia de re-estrictivo
-| PUBLIC        |public String x;   |menos rees.|
-| PROTECTED     |protected String x;|		|
-| DEFAULT       |String x;	    |		|
-| PRIVATE       |private String x;  |mas rees.  |
+| PUBLIC        |public String x;   	|menos rees.	|
+|:---:		|:---:			|:---:		|
+| PROTECTED     |protected String x;	|		|
+| DEFAULT       |String x;	    	|		|
+| PRIVATE       |private String x;  	|mas rees.  	|
 
 	Ejemplo 1                               Ejemplo 2
 
